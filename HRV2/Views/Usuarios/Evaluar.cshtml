@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Evaluar";
+}
+
+<h1>Evaluar</h1>
+<h2>Selecciona el tipo de colaborador</h2>
+
+<select id="tipoColaborador">
+    <option value="contribuidor">Contribuidor individual</option>
+    <option value="lideres">Líderes</option>
+    <option value="todos">Todos los niveles</option>
+</select>
+
+<button id="btnAceptar" onclick="desplegar()">Aceptar</button>
+
+<div id="contenidoSeleccionado"></div>
+
+<div id="divContribuidor" >
+    <h3>Habilidades para Contribuidor individual:</h3>
+    <ul>
+        <li>Resolución de Problemas</li>
+        <li>Aprendizaje Continuo</li>
+        <li>Iniciativa</li>
+        <li>Adaptabilidad</li>
+        <li>Orientación a Resultados</li>
+        <li>Orientación a Valores</li>
+    </ul>
+</div>
+
+<div id="divLideres" >
+    <h3>Habilidades para Líderes:</h3>
+    <ul>
+        <li>Visión de Negocio</li>
+        <li>Influencia</li>
+        <li>Liderazgo Equipo Inclusivo</li>
+        <li>Ejecución</li>
+        <li>Ownership</li>
+        <li>Integridad y Coraje</li>
+        <li>Enfoque Estratégico</li>
+    </ul>
+</div>
+
+<div id="divTodos" >
+    <h3>Habilidades para Todos los niveles:</h3>
+    <ul>
+        <li>Compatibilidad</li>
+        <li>Orientación al Cliente</li>
+        <li>Trabajo bajo Presión</li>
+    </ul>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btnAceptar").click(function () {
+            var tipoSeleccionado = $("#tipoColaborador").val();
+            if (tipoSeleccionado == "contribuidor") {
+                $("#contenidoSeleccionado").html($("#divContribuidor").html());
+            } else if (tipoSeleccionado == "lideres") {
+                $("#contenidoSeleccionado").html($("#divLideres").html());
+            } else if (tipoSeleccionado == "todos") {
+                $("#contenidoSeleccionado").html($("#divTodos").html());
+            }
+        });
+    });
+    function desplegar() {
+        if (tipoSeleccionado == "contribuidor") {
+            $("#contenidoSeleccionado").html($("#divContribuidor").html());
+        } else if (tipoSeleccionado == "lideres") {
+            $("#contenidoSeleccionado").html($("#divLideres").html());
+        } else if (tipoSeleccionado == "todos") {
+            $("#contenidoSeleccionado").html($("#divTodos").html());
+        }
+    }
+</script>
+
