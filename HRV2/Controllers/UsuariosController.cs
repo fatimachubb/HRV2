@@ -29,7 +29,7 @@ namespace HRV2.Controllers
             }
 
             return View(await usuarios.ToListAsync());
-                          
+
         }
 
         // GET: Usuarios/Details/5
@@ -155,14 +155,14 @@ namespace HRV2.Controllers
             {
                 _context.Usuarios.Remove(usuario);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UsuarioExists(int id)
         {
-          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
 
@@ -215,6 +215,39 @@ namespace HRV2.Controllers
             ViewData["Titulo"] = "Competencias para " + seleccion;
 
             return View();
+        }
+
+
+        public IActionResult DesplegarSegundoDeslizador(string opcionSeleccionada)
+        {
+            switch (opcionSeleccionada)
+            {
+                case "contribuidor-individual":
+                    // Código para desplegar el segundo deslizador con las opciones para "contribuidor individual"
+                    return PartialView("_SegundoDeslizadorContribuidorIndividual");
+                case "lideres":
+                    // Código para desplegar el segundo deslizador con las opciones para "líderes"
+                    return PartialView("_SegundoDeslizadorLideres");
+                case "todos-los-niveles":
+                    // Código para desplegar el segundo deslizador con las opciones para "todos los niveles"
+                    return PartialView("_SegundoDeslizadorTodosLosNiveles");
+                default:
+                    return BadRequest();
+            }
+        }
+
+        // GET: Usuarios/ColaboradorIndividual
+
+        public ActionResult ColaboradorIndividual()
+        {
+            return View("ColaboradorIndividual");
+        }
+
+        // GET: Usuarios/RProblemas
+
+        public ActionResult Rproblemas()
+        {
+            return View("Rproblemas");
         }
 
 

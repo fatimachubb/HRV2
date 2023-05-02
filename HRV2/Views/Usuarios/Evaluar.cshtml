@@ -6,18 +6,29 @@
 <h1>Evaluar</h1>
 <h2>Selecciona el tipo de colaborador</h2>
 
-<select id="tipoColaborador">
-    <option value="contribuidor">Contribuidor individual</option>
-    <option value="lideres">Líderes</option>
-    <option value="todos">Todos los niveles</option>
-</select>
 
-<button id="btnAceptar" onclick="desplegar()">Aceptar</button>
+<div style="background-color: yellow; padding: 10px;">
+    @Html.ActionLink("Colaborador Individual", "ColaboradorIndividual", "Usuarios", new { @class = "btn btn-primary m-2" })
+</div>
+
+
+<div style="background-color: deepskyblue; padding: 10px;">
+    @Html.ActionLink("Líderes", "ColaboradorIndividual", "Usuarios", new { @class = "btn btn-primary m-2" })
+</div>
+
+<div style="background-color: mediumpurple; padding: 10px;">
+    @Html.ActionLink("Todos los niveles", "ColaboradorIndividual", "Usuarios", new { @class = "btn btn-primary m-2" })
+</div>
+
+
+
+
+
 
 <div id="contenidoSeleccionado"></div>
 
-<div id="divContribuidor" >
-    <h3>Habilidades para Contribuidor individual:</h3>
+<div id="divContribuidor">
+    <h3>Competencias para Contribuidor individual:</h3>
     <ul>
         <li>Resolución de Problemas</li>
         <li>Aprendizaje Continuo</li>
@@ -28,8 +39,8 @@
     </ul>
 </div>
 
-<div id="divLideres" >
-    <h3>Habilidades para Líderes:</h3>
+<div id="divLideres">
+    <h3>Competencias para Líderes:</h3>
     <ul>
         <li>Visión de Negocio</li>
         <li>Influencia</li>
@@ -41,8 +52,8 @@
     </ul>
 </div>
 
-<div id="divTodos" >
-    <h3>Habilidades para Todos los niveles:</h3>
+<div id="divTodos">
+    <h3>Competencias para Todos los niveles:</h3>
     <ul>
         <li>Compatibilidad</li>
         <li>Orientación al Cliente</li>
@@ -72,5 +83,18 @@
             $("#contenidoSeleccionado").html($("#divTodos").html());
         }
     }
+
+    function seleccionarOpcion() {
+        var opcionSeleccionada = $("#primer-deslizador").find("input:checked").val();
+        $.ajax({
+            type: "GET",
+            url: "/Usuarios/DesplegarSegundoDeslizador",
+            data: { opcionSeleccionada: opcionSeleccionada },
+            success: function (result) {
+                $("#segundo-deslizador").html(result);
+            }
+        });
+    }
 </script>
+
 
