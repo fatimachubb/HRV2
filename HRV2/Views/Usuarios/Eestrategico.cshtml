@@ -1,0 +1,179 @@
+﻿
+
+@{
+    ViewData["Title"] = "Eestrategico";
+}
+
+<h1>Enfoque Estrategico</h1>
+
+<style>
+    p {
+        font-size: 18px;
+        color: #333;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        border: 1px solid #ccc; /* Agrega un borde de 1px sólido en color gris claro */
+        padding: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 800px; /* Ajusta este valor al ancho máximo deseado */
+        height: 150px; /* Ajusta este valor a la altura deseada */
+        padding: 8px;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+</style>
+
+<p>El candidato:</p>
+<ul>
+    <li>Incorpora una perspectiva a largo plazo en Chubb y en los mercados en los que Chubb opera, tanto en la planificación, como en la ejecución </li>
+    <li>Entiende cómo su propio equipo, unidad de negocio o función encaja dentro de la estrategia de la compañía.</li>
+    <li>Posee capacidad para anticiparse, detectar tendencias y comprender cambios del mercado, definiendo los impactos para el negocio a corto, mediano y largo plazo; definiendo estrategias para adelantarse y conducir a la organización</li>
+    <li>Crea una imagen atractiva del futuro que inspira a otros.</li>
+    <li>Utiliza el entendimiento de los clientes para adaptar y/o impulsar soluciones de productos y servicios</li>
+
+</ul>
+
+
+
+
+<p> <strong>Selecciona 1 o 2 preguntas sugeridas para evaluar esta competencia</strong>.</p>
+
+<ol>
+    <li>
+        ¿Cuál ha sido alguna tendencia o cambio en el mercado que te haya obligado a cambiar la dirección de tu negocio y/o área?
+
+        <ol type="a">
+            <li>¿Qué pasó?</li>
+            <li>¿Qué acciones tomaste?</li>
+            <li>¿Qué impacto tuvo?</li>
+        </ol>
+    </li>
+    <li>
+        Compárteme alguna situación en la que hayas tenido que anticiparte a las necesidades de tus clientes
+        <ol type="a">
+            <li>¿Qué sucedió?</li>
+            <li>¿Qué acciones llevaste a cabo?</li>
+            <li>¿Con que te enfrentaste?</li>
+            <li>¿Qué resultado tuviste?</li>
+
+        </ol>
+    </li>
+    <li>
+        Algún ejemplo en el que hayas desarrollado una iniciativa que generó un impacto en los resultados del negocio e inspiro a otros colaboradores del equipo
+        <ol type="a">
+            <li>¿Qué te motivó a desarrollarla?</li>
+            <li>¿Que acciones llevaste a cabo?</li>
+            <li>¿Cuál impacto tuvo?</li>
+            <li>¿Cómo inspiró a los colaboradores?</li>
+
+        </ol>
+
+    </li>
+    <li>
+        Alguna ocasión en la que desarrollaste una estrategia para darle mayor agilidad y enfoque a tu área / negoci
+        <ol type="a">
+            <li>¿Qué pasó?</li>
+            <li>¿Qué acciones llevaste a cabo?</li>
+            <li>¿Cuál fue el resultado?</li>
+        </ol>
+    </li>
+</ol>
+
+<p> <strong>Documenta brevemente las respuestas del candidato, de acuerdo con el MODELO STAR</strong>.</p>
+
+<table>
+    <tr>
+        <th>Situación</th>
+        <th>Tarea</th>
+        <th>Acción</th>
+        <th>Resultado</th>
+    </tr>
+    <tr>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+
+    </tr>
+</table>
+
+
+<p> <strong>Comentarios / Observaciones Generales:</strong>.</p>
+
+<div>
+    <label for="comentarios"></label>
+    <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+</div>
+
+
+<p> <strong>Evalúa la respuesta del candidato de acuerdo con la escala de calificación:</strong>.</p>
+
+<table>
+    <tr>
+        <th>Carece o N/A</th>
+        <th>Conocimiento general</th>
+        <th>Conocimiento sólido</th>
+        <th>Conocimiento profundo</th>
+        <th>Alto Dominio</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+
+    </tr>
+</table>
+
+
+<label for="evaluacion">Evaluación:</label>
+<select name="evaluacion" id="evaluacion">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+
+<button id="guardar-btn">Finalizar evaluación</button>
+
+<button id="guardar-btnn">Evaluar otra competencia</button>
+
+<script>
+    // Agregar un listener de evento click al botón de guardar
+    document.getElementById("guardar-btn").addEventListener("click", function () {
+        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
+        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
+        window.location.href = "/Usuarios";
+    });
+
+    document.getElementById("guardar-btnn").addEventListener("click", function () {
+        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
+        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
+        window.location.href = "/Rproblemas";
+    });
+</script>
