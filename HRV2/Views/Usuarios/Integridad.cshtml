@@ -1,0 +1,174 @@
+﻿
+
+@{
+    ViewData["Title"] = "Integridad";
+}
+
+<h1>Integridad y Coraje</h1>
+
+<style>
+    p {
+        font-size: 18px;
+        color: #333;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        border: 1px solid #ccc; /* Agrega un borde de 1px sólido en color gris claro */
+        padding: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 800px; /* Ajusta este valor al ancho máximo deseado */
+        height: 150px; /* Ajusta este valor a la altura deseada */
+        padding: 8px;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+    
+
+
+</style>
+
+<p>El candidato:</p> 
+<ul>
+    <li>Sustenta y modela los valores Chubb, incluso en situaciones desafiantes, en la toma de decisiones y al comunicarse con otros.</li>
+    <li>Establece un buen ejemplo ético y se comporta como un modelo a seguir por otros, incluso cuando es difícil hacerlo.</li>
+    <li>Se conduce con rectitud y congruencia. Comunica intenciones, ideas y sentimientos de forma abierta y directa.</li>
+    <li>Demuestra confianza en su propia opinión, análisis o punto de vista.</li>
+    <li>Plantea temas difíciles con otros, con el fin de mejorar el desempeño del negocio.</li>
+    <li>Comparte información de manera consistente y honesta.</li>
+</ul>
+
+<p> <strong>Selecciona 1 o 2 preguntas sugeridas para evaluar esta competencia</strong>.</p>
+
+<ol>
+    <li>
+        ¿Cuál fue la última retroalimentación que te dio tu jefe en relación a tus valores en el trabajo?
+        <ol type="a">
+            <li>¿Cómo te sentiste?</li>
+            <li>¿Cómo muestras tus valores?</li>
+        </ol>
+    </li>
+    <li>
+        Cuéntame alguna conversación difícil que hayas enfrentado, ya sea con colaboradores, jefe, colegas y/o clientes en donde defendiste tu punto de vista.
+        <ol type="a">
+            <li>¿Qué sucedió?</li>
+            <li>¿Qué te llevó a hacerlo de esa manera?</li>
+            <li>¿Qué aprendiste?</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </li>
+    <li>
+        Dame un ejemplo más reciente, de cómo vives la integridad
+        <ol type="a">
+            <li>¿Qué es importante para ti reflejar en las personas?</li>
+        </ol>
+    </li>
+    <li>
+        Si pregunto a tus colegas cuáles son los 3 valores más importantes que ven en ti, ¿Cuáles son?
+        <ol type="a">
+            <li>¿Por qué te distinguen?</li>
+            <li>¿Cómo los vives y modelas en el trabajo?</li>
+            <li></li>
+        </ol>
+    </li>
+</ol>
+
+<p> <strong>Documenta brevemente las respuestas del candidato, de acuerdo con el MODELO STAR</strong>.</p>
+
+<table>
+    <tr>
+        <th>Situación</th>
+        <th>Tarea</th>
+        <th>Acción</th>
+        <th>Resultado</th>
+    </tr>
+    <tr>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+        <td contenteditable="true" style="width: 300px;"></td>
+
+    </tr>
+</table>
+
+
+<p> <strong>Comentarios / Observaciones Generales:</strong>.</p>
+
+<div>
+    <label for="comentarios"></label>
+    <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+</div>
+
+
+<p> <strong>Evalúa la respuesta del candidato de acuerdo con la escala de calificación:</strong>.</p>
+
+<table>
+    <tr>
+        <th>Carece o N/A</th>
+        <th>Conocimiento general</th>
+        <th>Conocimiento sólido</th>
+        <th>Conocimiento profundo</th>
+        <th>Alto Dominio</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+
+    </tr>
+</table>
+
+
+<label for="evaluacion">Evaluación:</label>
+<select name="evaluacion" id="evaluacion">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<button id="guardar-btn">Finalizar evaluación</button>
+
+<button id="guardar-btnn">Evaluar otra competencia</button>
+
+<script>
+    // Agregar un listener de evento click al botón de guardar
+    document.getElementById("guardar-btn").addEventListener("click", function () {
+        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
+        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
+        window.location.href = "/Usuarios";
+    });
+
+    document.getElementById("guardar-btnn").addEventListener("click", function () {
+        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
+        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
+        window.location.href = "/Rproblemas";
+    });
+</script>
