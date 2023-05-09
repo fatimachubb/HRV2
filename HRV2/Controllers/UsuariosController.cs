@@ -250,6 +250,42 @@ namespace HRV2.Controllers
             return View("Rproblemas");
         }
 
+        // GET: Usuarios/Acontinuo
+
+        public ActionResult Acontinuo()
+        {
+            return View("Acontinuo");
+        }
+
+        // GET: Usuarios/Iniciativa
+
+        public ActionResult Iniciativa()
+        {
+            return View("Rproblemas");
+        }
+
+        // GET: Usuarios/Adaptabilidad
+
+        public ActionResult Adaptabilidad()
+        {
+            return View("Adaptabilidad");
+        }
+
+        // GET: Usuarios/Oresultados
+
+        public ActionResult Oresultados()
+        {
+            return View("Oresultados");
+        }
+
+        // GET: Usuarios/Ovalores
+
+        public ActionResult Ovalores()
+        {
+            return View("Ovalores");
+        }
+
+
         // GET: Usuarios/Lideres
 
         public ActionResult Lideres()
@@ -271,35 +307,35 @@ namespace HRV2.Controllers
             return View("Influencia");
         }
 
-        // GET: Usuarios/Lideres
+        // GET: Usuarios/LEinclusivo
 
         public ActionResult LEinclusivo()
         {
             return View("LEinclusivo");
         }
 
-        // GET: Usuarios/Lideres
+        // GET: Usuarios/Ejecucion
 
         public ActionResult Ejecucion()
         {
             return View("Ejecucion");
         }
 
-        // GET: Usuarios/Lideres
+        // GET: Usuarios/Titularidad
 
         public ActionResult Titularidad()
         {
             return View("Titularidad");
         }
 
-        // GET: Usuarios/Lideres
+        // GET: Usuarios/Integridad
 
         public ActionResult Integridad()
         {
             return View("Integridad");
         }
 
-        // GET: Usuarios/Lideres
+        // GET: Usuarios/Eestrategico
 
         public ActionResult Eestrategico()
         {
