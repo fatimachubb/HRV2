@@ -250,6 +250,115 @@ namespace HRV2.Controllers
             return View("Rproblemas");
         }
 
+        // GET: Usuarios/Lideres
+
+        public ActionResult Lideres()
+        {
+            return View("Lideres");
+
+        }
+
+        // GET: Usuarios/Vnegocio
+
+        public ActionResult Vnegocio()
+        {
+            return View("Vnegocio");
+
+        }
+
+        // GET: Usuarios/Influencia
+
+        public ActionResult Influencia()
+        {
+            return View("Influencia");
+
+        }
+
+        // GET: Usuarios/LEinclusivo
+
+        public ActionResult LEinclusivo()
+        {
+            return View("LEinclusivo");
+
+        }
+
+        // GET: Usuarios/Ejecucion
+
+        public ActionResult Ejecucion()
+        {
+            return View("Ejecucion");
+
+        }
+
+        // GET: Usuarios/Titularidad
+
+        public ActionResult Titularidad()
+        {
+            return View("Titularidad");
+
+        }
+
+        // GET: Usuarios/Integridad
+
+        public ActionResult Integridad()
+        {
+            return View("Integridad");
+
+        }
+
+       
+        // GET: Usuarios/Eestrategico
+
+        public ActionResult Eestrategico()
+        {
+            return View("Eestrategico");
+
+        }
+
+        // GET: Usuarios/Acontinuo
+
+        public ActionResult Acontinuo()
+        {
+            return View("Acontinuo");
+
+        }
+
+        // GET: Usuarios/Iniciativa
+
+        public ActionResult Iniciativa()
+        {
+            return View("Iniciativa");
+
+        }
+
+
+        // GET: Usuarios/Adaptabilidad
+
+        public ActionResult Adaptabilidad()
+        {
+            return View("Adaptabilidad");
+
+        }
+
+
+        // GET: Usuarios/Oresultados
+
+        public ActionResult Oresultados()
+        {
+            return View("Oresultados");
+
+        }
+
+        // GET: Usuarios/Ovalores
+
+        public ActionResult Ovalores()
+        {
+            return View("Ovalores");
+
+        }
+
+
+
 
     }
 }

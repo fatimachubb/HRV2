@@ -1,10 +1,10 @@
 ﻿
 
 @{
-    ViewData["Title"] = "Rproblemas";
+    ViewData["Title"] = "Eestrategico";
 }
 
-<h1>Resolución de Problemas</h1>
+<h1>Enfoque Estrategico</h1>
 
 <style>
     p {
@@ -44,53 +44,59 @@
         box-sizing: border-box;
         margin-top: 20px;
     }
-    
-
-
 </style>
 
-<p>El candidato:</p> 
+<p>El candidato:</p>
 <ul>
-    <li>Tiene un enfoque organizado y lógico para reflexionar sobre los problemas y asuntos complejos.</li>
-    <li>Simplifica la complejidad desglosando los problemas en partes manejables.</li>
-    <li>Busca más allá de lo obvio para lograr resultados.</li>
-    <li>Desarrolla introspección de los problemas, asuntos y situaciones de forma efectiva y ágil.</li>
+    <li>Incorpora una perspectiva a largo plazo en Chubb y en los mercados en los que Chubb opera, tanto en la planificación, como en la ejecución </li>
+    <li>Entiende cómo su propio equipo, unidad de negocio o función encaja dentro de la estrategia de la compañía.</li>
+    <li>Posee capacidad para anticiparse, detectar tendencias y comprender cambios del mercado, definiendo los impactos para el negocio a corto, mediano y largo plazo; definiendo estrategias para adelantarse y conducir a la organización</li>
+    <li>Crea una imagen atractiva del futuro que inspira a otros.</li>
+    <li>Utiliza el entendimiento de los clientes para adaptar y/o impulsar soluciones de productos y servicios</li>
+
 </ul>
+
+
+
 
 <p> <strong>Selecciona 1 o 2 preguntas sugeridas para evaluar esta competencia</strong>.</p>
 
 <ol>
     <li>
-        Cuéntame de alguna situación en la que no pudiste cumplir con el tiempo establecido de entrega.
+        ¿Cuál ha sido alguna tendencia o cambio en el mercado que te haya obligado a cambiar la dirección de tu negocio y/o área?
+
         <ol type="a">
             <li>¿Qué pasó?</li>
-            <li>¿Con qué obstáculos te enfrentaste?</li>
-            <li>¿Cómo lo resolviste?</li>
-            <li>¿Cuál fue el resultado?</li>
+            <li>¿Qué acciones tomaste?</li>
+            <li>¿Qué impacto tuvo?</li>
         </ol>
     </li>
     <li>
-        Descríbeme el mayor problema que hayas experimentado en tu rol actual.
+        Compárteme alguna situación en la que hayas tenido que anticiparte a las necesidades de tus clientes
         <ol type="a">
             <li>¿Qué sucedió?</li>
-            <li>¿Qué te llevó a hacerlo de esa manera?</li>
-            <li>¿Qué aprendiste?</li>
-        </ol>
-    </li>
-    <li>
-        Cuéntame de alguna situación en la que tuviste que abordar un problema y no contabas con toda la información necesaria.
-        <ol type="a">
-            <li>¿Qué se esperaba de ti?</li>
             <li>¿Qué acciones llevaste a cabo?</li>
-            <li>¿Cuál fue el resultado de acuerdo con tus acciones?</li>
+            <li>¿Con que te enfrentaste?</li>
+            <li>¿Qué resultado tuviste?</li>
+
         </ol>
     </li>
     <li>
-        Háblame de alguna ocasión en la que hayas tenido que cambiar tu estrategia para lograr solucionar un problema.
+        Algún ejemplo en el que hayas desarrollado una iniciativa que generó un impacto en los resultados del negocio e inspiro a otros colaboradores del equipo
+        <ol type="a">
+            <li>¿Qué te motivó a desarrollarla?</li>
+            <li>¿Que acciones llevaste a cabo?</li>
+            <li>¿Cuál impacto tuvo?</li>
+            <li>¿Cómo inspiró a los colaboradores?</li>
+
+        </ol>
+
+    </li>
+    <li>
+        Alguna ocasión en la que desarrollaste una estrategia para darle mayor agilidad y enfoque a tu área / negoci
         <ol type="a">
             <li>¿Qué pasó?</li>
-            <li>¿Qué esperaban de ti?</li>
-            <li>¿Qué hiciste?</li>
+            <li>¿Qué acciones llevaste a cabo?</li>
             <li>¿Cuál fue el resultado?</li>
         </ol>
     </li>
@@ -146,11 +152,11 @@
 
 <label for="evaluacion">Evaluación:</label>
 <select name="evaluacion" id="evaluacion">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
 </select>
 
 <button id="guardar-btn">Finalizar evaluación</button>
@@ -168,6 +174,6 @@
     document.getElementById("guardar-btnn").addEventListener("click", function () {
         // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
         // Una vez que el guardado esté completo, redirigir a la vista Usuarios
-        window.location.href = "/Usuarios/ColaboradorIndividual";
+        window.location.href = "/Usuarios/Lideres";
     });
 </script>
