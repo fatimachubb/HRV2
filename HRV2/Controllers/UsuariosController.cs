@@ -250,6 +250,63 @@ namespace HRV2.Controllers
             return View("Rproblemas");
         }
 
+        // GET: Usuarios/Lideres
+
+        public ActionResult Lideres()
+        {
+            return View("Lideres");
+        }
+
+        // GET: Usuarios/Vnegocio
+
+        public ActionResult Vnegocio()
+        {
+            return View("Vnegocio");
+        }
+
+        // GET: Usuarios/Influencia
+
+        public ActionResult Influencia()
+        {
+            return View("Influencia");
+        }
+
+        // GET: Usuarios/Lideres
+
+        public ActionResult LEinclusivo()
+        {
+            return View("LEinclusivo");
+        }
+
+        // GET: Usuarios/Lideres
+
+        public ActionResult Ejecucion()
+        {
+            return View("Ejecucion");
+        }
+
+        // GET: Usuarios/Lideres
+
+        public ActionResult Titularidad()
+        {
+            return View("Titularidad");
+        }
+
+        // GET: Usuarios/Lideres
+
+        public ActionResult Integridad()
+        {
+            return View("Integridad");
+        }
+
+        // GET: Usuarios/Lideres
+
+        public ActionResult Eestrategico()
+        {
+            return View("Eestrategico");
+        }
 
     }
 }
+
+
