@@ -11,5 +11,5 @@ public partial class Usuario
 
     public DateTime? Fecha { get; set; }
 
-    public string? Posicion  { get; set; }  
+    public string? Posicion { get; set; }
 }
