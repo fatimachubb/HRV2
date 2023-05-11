@@ -342,6 +342,32 @@ namespace HRV2.Controllers
             return View("Eestrategico");
         }
 
+        // Calificacion
+
+
+        public IActionResult FinalizarEvaluacion()
+        {
+            // Obtener el valor de la calificación guardado en localStorage
+            var calificacion = HttpContext.Session.GetString("calificacion");
+
+            // Asignar el valor de la calificación al ViewBag para que esté disponible en la vista
+            ViewBag.Calificacion = calificacion;
+
+            // Redirigir a la vista Usuarios
+            return RedirectToAction("Usuarios");
+        }
+
+        public IActionResult Calificacion(int? calificacion)
+        {
+            // Puedes utilizar el valor de la calificación aquí según tus necesidades
+            // Por ejemplo, guardarlo en la base de datos, realizar algún cálculo, etc.
+
+            return View();
+        }
+
+
+
+
     }
 }
 

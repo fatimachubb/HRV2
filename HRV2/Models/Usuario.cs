@@ -11,5 +11,12 @@ public partial class Usuario
 
     public DateTime? Fecha { get; set; }
 
-    public string? Posicion  { get; set; }  
+    public string? Posicion  { get; set; }
+
+    public int Calificacion { get; set; }
+
+    public Usuario(int calificacion)
+    {
+        Calificacion = calificacion;
+    }
 }

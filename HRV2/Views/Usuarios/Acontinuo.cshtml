@@ -137,24 +137,15 @@
         <th>Alto Dominio</th>
     </tr>
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-
+        <td><button onclick="seleccionarValor(1)">1</button></td>
+        <td><button onclick="seleccionarValor(2)">2</button></td>
+        <td><button onclick="seleccionarValor(3)">3</button></td>
+        <td><button onclick="seleccionarValor(4)">4</button></td>
+        <td><button onclick="seleccionarValor(5)">5</button></td>
     </tr>
 </table>
 
-
-<label for="evaluacion">Evaluación:</label>
-<select name="evaluacion" id="evaluacion">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
+<div id="resultado"></div>
 
 <button id="guardar-btn">Finalizar evaluación</button>
 
@@ -163,14 +154,24 @@
 <script>
     // Agregar un listener de evento click al botón de guardar
     document.getElementById("guardar-btn").addEventListener("click", function () {
-        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
-        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
-        window.location.href = "/Usuarios";
+        // Obtener el valor de la calificación guardado en localStorage
+        var calificacion = localStorage.getItem("calificacion");
+        // Redirigir a la vista Usuarios y pasar el valor de la calificación como parámetro en la URL
+        window.location.href = "/Usuarios?calificacion=" + calificacion;
     });
 
     document.getElementById("guardar-btnn").addEventListener("click", function () {
-        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
-        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
-        window.location.href = "/Usuarios/ColaboradorIndividual";
+        // Obtener el valor de la calificación guardado en localStorage
+        var calificacion = localStorage.getItem("calificacion");
+        // Redirigir a la vista ColaboradorIndividual y pasar el valor de la calificación como parámetro en la URL
+        window.location.href = "/Usuarios/ColaboradorIndividual?calificacion=" + calificacion;
     });
+
+    function seleccionarValor(valor) {
+        // Guardar el valor de la calificación en localStorage
+        localStorage.setItem("calificacion", valor);
+        // Mostrar el valor en el elemento con id "resultado"
+        document.getElementById("resultado").textContent = "La calificación es " + valor;
+    }
 </script>
+
