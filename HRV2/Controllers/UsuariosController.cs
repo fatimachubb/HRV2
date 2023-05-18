@@ -6,11 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HRV2.Models;
+using Aspose.Cells;
+using System.Collections;
+using System.Data;
+using System.Data.SqlClient;
+
+
 
 namespace HRV2.Controllers
 {
     public class UsuariosController : Controller
     {
+
+        private string connectionString = "Server=localhost\\SQLEXPRESS02;Database=Inicio; integrated security=true; Encrypt=False;";
+      
+
         private readonly InicioContext _context;
 
         public UsuariosController(InicioContext context)
@@ -342,7 +352,56 @@ namespace HRV2.Controllers
             return View("Eestrategico");
         }
 
+
+
+
+
+
+        public ActionResult Prueba()
+        {
+            // Create a new DataTable
+            DataTable dataTable = new DataTable();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Usuarios"; 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    dataTable.Load(reader);
+                    reader.Close();
+                }
+                connection.Close();
+            }
+
+            // Instantiating a Workbook object            
+            Workbook workbook = new Workbook();
+
+            // Obtaining the reference of the worksheet
+            Worksheet worksheet = workbook.Worksheets[0];
+
+
+            // Setting IsFieldNameShown property to true will add column names // of the DataTable to the worksheet as a header row
+            ImportTableOptions tableOptions = new ImportTableOptions();
+            tableOptions.IsFieldNameShown = true;
+
+            // Exporting the contents of DataTable at the first row and first column.
+            worksheet.Cells.ImportData(dataTable, 0, 0, tableOptions);
+
+            // Saving the Excel file
+            workbook.Save("DataTable_Export.xlsx");
+
+
+            return View("Prueba");
+        }
+
+
+
     }
+
+
+
 }
+
 
 

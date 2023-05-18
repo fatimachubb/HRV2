@@ -1,6 +1,8 @@
 using HRV2.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,3 +35,10 @@ app.MapControllerRoute(
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+string connectionString = "Server=localhost\\SQLEXPRESS02;Database=Inicio; integrated security=true; Encrypt=False;";
+SqlConnection connection = new SqlConnection(connectionString);
+
+
+
