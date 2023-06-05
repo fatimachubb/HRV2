@@ -11,7 +11,6 @@
     @Html.ActionLink("Colaborador Individual", "ColaboradorIndividual", "Usuarios", new { @class = "btn btn-primary m-2" })
 </div>
 
-
 <div style="background-color: deepskyblue; padding: 10px;">
     @Html.ActionLink("Líderes", "Lideres", "Usuarios", new { @class = "btn btn-primary m-2" })
 </div>
@@ -21,7 +20,10 @@
 </div>
 
 
-
+<form method="post" action="/Usuarios/Prueba">
+    <input type="text" name="fileName" placeholder="Enter file name">
+    <button type="submit">Save Excel File</button>
+</form>
 
 
 

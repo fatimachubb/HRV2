@@ -125,49 +125,92 @@
 
 <p> <strong>Evalúa la respuesta del candidato de acuerdo con la escala de calificación:</strong>.</p>
 
+<script>
+    var selectedScores = [];
+
+    // JavaScript function to handle button clicks for each set of scores
+    function scoreQuestion(setIndex, score) {
+        var buttonId = "scoreButton_" + setIndex + "_" + score;
+        var button = document.getElementById(buttonId);
+
+        // Check if the maximum number of scores has been reached
+        if (selectedScores.length >= numSets) {
+            // Find and deselect the earliest selected score
+            var earliestSelectedScore = selectedScores.shift();
+            var earliestSelectedButtonId = "scoreButton_" + earliestSelectedScore.setIndex + "_" + earliestSelectedScore.score;
+            var earliestSelectedButton = document.getElementById(earliestSelectedButtonId);
+            earliestSelectedButton.classList.remove("selected");
+        }
+
+        // Toggle the 'selected' class for the clicked button
+        button.classList.toggle("selected");
+
+        // Update the selected scores array
+        var index = selectedScores.findIndex(function (s) {
+            return s.setIndex === setIndex;
+        });
+
+        if (index > -1) {
+            selectedScores[index] = { setIndex: setIndex, score: score };
+        } else {
+            selectedScores.push({ setIndex: setIndex, score: score });
+        }
+
+        calculateAverage();
+    }
+
+    // Function to calculate and display the average of the selected scores
+    function calculateAverage() {
+        if (selectedScores.length !== numSets) {
+            // Display a message when the required number of sets is not selected
+            document.getElementById("averageScore").textContent = "Average Score: Not enough sets selected";
+            return;
+        }
+
+        // Calculate the average of the selected scores
+        var sum = selectedScores.reduce(function (a, b) {
+            return a + b.score;
+        }, 0);
+
+        var average = sum / selectedScores.length;
+
+        // Display the average on the screen
+        document.getElementById("averageScore").textContent = "Average Score: " + average.toFixed(2);
+    }
+</script>
+
+<h1>Score the Question</h1>
+
+<!-- Number of sets and scores per set -->
+<p>Number of Sets: <span id="numSets">2</span></p>
+<p>Scores per Set: 1 to 5</p>
+
+<!-- Table for score buttons -->
 <table>
     <tr>
-        <th>Carece o N/A</th>
-        <th>Conocimiento general</th>
-        <th>Conocimiento sólido</th>
-        <th>Conocimiento profundo</th>
-        <th>Alto Dominio</th>
+        <th>Score Meaning</th>
+        <th>Scores</th>
     </tr>
     <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-
+        <td>Low</td>
+        <td>
+            <button type="button" id="scoreButton_1_1" class="score-button" onclick="scoreQuestion(1, 1)">1</button>
+            <button type="button" id="scoreButton_1_2" class="score-button" onclick="scoreQuestion(1, 2)">2</button>
+            <button type="button" id="scoreButton_1_3" class="score-button" onclick="scoreQuestion(1, 3)">3</button>
+            <button type="button" id="scoreButton_1_4" class="score-button" onclick="scoreQuestion(1, 4)">4</button>
+            <button type="button" id="scoreButton_1_5" class="score-button" onclick="scoreQuestion(1, 5)">5</button>
+        </td>
+    </tr>
+    <tr>
+        <td>High</td>
+        <td>
+            <button type="button" id="scoreButton_2_1" class="score-button" onclick="scoreQuestion(2, 1)">1</button>
+            <button type="button" id="scoreButton_2_2" class="score-button" onclick="scoreQuestion(2, 2)">2</button>
+            <button type="button" id="scoreButton_2_3" class="score-button" onclick="scoreQuestion(2, 3)">3</button>
+            <button type="button" id="scoreButton_2_4" class="score-button" onclick="scoreQuestion(2, 4)">4</button>
+            <button type="button" id="scoreButton_2_5" class="score-button" onclick="scoreQuestion(2, 5)">5</button>
+        </td>
     </tr>
 </table>
 
-
-<label for="evaluacion">Evaluación:</label>
-<select name="evaluacion" id="evaluacion">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select>
-
-<button id="guardar-btn">Finalizar evaluación</button>
-
-<button id="guardar-btnn">Evaluar otra competencia</button>
-
-<script>
-    // Agregar un listener de evento click al botón de guardar
-    document.getElementById("guardar-btn").addEventListener("click", function () {
-        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
-        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
-        window.location.href = "/Usuarios";
-    });
-
-    document.getElementById("guardar-btnn").addEventListener("click", function () {
-        // Realizar cualquier acción de guardado necesaria aquí, como enviar datos al servidor con AJAX
-        // Una vez que el guardado esté completo, redirigir a la vista Usuarios
-        window.location.href = "/Usuarios/ColaboradorIndividual";
-    });
-</script>
+<p id="averageScore"></p>

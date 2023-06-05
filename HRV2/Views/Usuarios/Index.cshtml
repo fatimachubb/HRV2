@@ -7,7 +7,7 @@
 <h1>Listado de Usuarios</h1>
 
 <p>
-    <a asp-action="Create">Create Neww</a>
+    <a asp-action="Create">Create New</a>
 </p>
 
 <form asp-controller="Usuarios" asp-action="Index">
@@ -18,7 +18,7 @@
 
 </form>
 
-<table class="table">
+<table id="tblCustomers" class="table">
     <thead>
         <tr>
             <th>
@@ -48,7 +48,7 @@
             <td>
                 <a asp-action="Edit" class= "btn btn-warning" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" class= "btn btn-primary" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" class= "btn btn-darger" asp-route-id="@item.Id">Delete</a>|
+                <a asp-action="Delete" class= "btn btn-danger" asp-route-id="@item.Id">Delete</a>|
                 <a asp-action="Evaluar" class="btn btn-secondary" asp-route-id="@item.Id">Evaluar</a>
                 
             </td>

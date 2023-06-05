@@ -19,8 +19,6 @@ namespace HRV2.Controllers
     {
 
         private string connectionString = "Server=localhost\\SQLEXPRESS02;Database=Inicio; integrated security=true; Encrypt=False;";
-      
-
         private readonly InicioContext _context;
 
         public UsuariosController(InicioContext context)
@@ -353,11 +351,7 @@ namespace HRV2.Controllers
         }
 
 
-
-
-
-
-        public ActionResult Prueba()
+        public ActionResult Prueba (string fileName)
         {
             // Create a new DataTable
             DataTable dataTable = new DataTable();
@@ -380,6 +374,11 @@ namespace HRV2.Controllers
             // Obtaining the reference of the worksheet
             Worksheet worksheet = workbook.Worksheets[0];
 
+            Style headerStyle = workbook.CreateStyle();
+            headerStyle.Font.IsBold = true;
+
+            // Apply the header style to the first row
+            worksheet.Cells.ApplyStyle(headerStyle, new StyleFlag() { All = true });
 
             // Setting IsFieldNameShown property to true will add column names // of the DataTable to the worksheet as a header row
             ImportTableOptions tableOptions = new ImportTableOptions();
@@ -388,9 +387,13 @@ namespace HRV2.Controllers
             // Exporting the contents of DataTable at the first row and first column.
             worksheet.Cells.ImportData(dataTable, 0, 0, tableOptions);
 
-            // Saving the Excel file
-            workbook.Save("DataTable_Export.xlsx");
+            worksheet.Name = "MySheetName"; // Set the desired sheet name
 
+            // Saving the Excel file
+
+            string filePath = Path.Combine("C:\\Users\\CHFERMI\\Desktop\\Proyectos", fileName + ".xlsx");
+
+            workbook.Save(filePath);
 
             return View("Prueba");
         }
